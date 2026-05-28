@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #f5f7fa;
+            background: #f0f2f5;
             color: #1a1a2e;
             line-height: 1.6;
         }
@@ -24,14 +24,12 @@
             padding: 0 20px;
         }
 
-        /* Header */
         .header {
             text-align: center;
             padding: 60px 20px 40px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color: white;
             margin-bottom: 50px;
-            border-radius: 0 0 30px 30px;
         }
 
         .header h1 {
@@ -40,15 +38,9 @@
         }
 
         .header h1 span {
-            color: #00d9ff;
+            color: #00d4ff;
         }
 
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Two column layout */
         .row {
             display: flex;
             gap: 40px;
@@ -61,19 +53,17 @@
             min-width: 280px;
         }
 
-        /* Info cards */
         .info-card {
             background: white;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 25px;
         }
 
         .info-card h3 {
+            margin-bottom: 20px;
             color: #1a1a2e;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
         }
 
         .info-card ul {
@@ -88,42 +78,36 @@
 
         .info-card li:before {
             content: "✓";
-            color: #00d9ff;
+            color: #00d4ff;
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
         .example-box {
-            background: #e8f4f8;
-            padding: 20px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
             text-align: center;
         }
 
-        .example-box h4 {
-            color: #1a1a2e;
-            margin-bottom: 10px;
-        }
-
-        /* Form Card */
         .form-card {
             background: white;
             padding: 35px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .form-card h2 {
-            color: #1a1a2e;
             margin-bottom: 10px;
-            font-size: 1.8rem;
+            color: #1a1a2e;
         }
 
         .form-card .sub {
             color: #666;
             margin-bottom: 25px;
-            border-left: 3px solid #00d9ff;
+            border-left: 3px solid #00d4ff;
             padding-left: 15px;
         }
 
@@ -144,14 +128,12 @@
             border: 2px solid #e0e0e0;
             border-radius: 12px;
             font-size: 1rem;
-            transition: all 0.3s;
             font-family: inherit;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: #00d9ff;
-            box-shadow: 0 0 0 3px rgba(0,217,255,0.1);
+            border-color: #00d4ff;
         }
 
         .budget-row {
@@ -179,56 +161,27 @@
             width: 100%;
             cursor: pointer;
             transition: all 0.3s;
-            margin-top: 10px;
         }
 
         button:hover {
-            background: #00d9ff;
+            background: #00d4ff;
             color: #1a1a2e;
-            transform: translateY(-2px);
         }
 
-        .success-msg {
-            display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
             padding: 40px 20px;
             background: #1a1a2e;
             color: #aaa;
-            border-radius: 30px 30px 0 0;
-            margin-top: 50px;
         }
 
         .business-email {
-            background: #2a2a4e;
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
             margin-top: 15px;
-            font-size: 0.9rem;
         }
 
         .business-email a {
-            color: #00d9ff;
+            color: #00d4ff;
             text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            .form-card {
-                padding: 25px;
-            }
         }
     </style>
 </head>
@@ -243,7 +196,6 @@
 
 <div class="container">
     <div class="row">
-        <!-- Left column - Information -->
         <div class="col">
             <div class="info-card">
                 <h3>💻 How It Works</h3>
@@ -251,7 +203,7 @@
                     <li>Tell us your budget and needs</li>
                     <li>We hand-pick the best components</li>
                     <li>You get a custom parts list via email</li>
-                    <li>Build it yourself or ask for assembly help</li>
+                    <li>Build it yourself or get help</li>
                 </ul>
             </div>
 
@@ -268,21 +220,19 @@
             <div class="example-box">
                 <h4>📌 Example Build</h4>
                 <p><strong>$850 Budget:</strong><br>
-                Ryzen 5 5600X + RTX 3060 + 16GB RAM + 1TB SSD<br>
-                Perfect for 1080p gaming and streaming</p>
+                Ryzen 5 5600X + RTX 3060 + 16GB RAM + 1TB SSD</p>
             </div>
         </div>
 
-        <!-- Right column - Form -->
         <div class="col">
             <div class="form-card">
                 <h2>Request Your Build</h2>
                 <div class="sub">Fill out the form and we'll email you a custom parts list</div>
 
-                <!-- NETLIFY FORM - This is the key part -->
-                <form name="pc-build-request" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="pc-build-request">
-
+                <!-- NETLIFY FORM - Fixed version -->
+                <form name="pcbuild" method="POST" data-netlify="true" action="/">
+                    <input type="hidden" name="form-name" value="pcbuild">
+                    
                     <div class="form-group">
                         <label>📝 Full Name</label>
                         <input type="text" name="name" placeholder="John Doe" required>
@@ -304,25 +254,22 @@
                     <div class="form-group">
                         <label>🖥️ Primary Use</label>
                         <select name="purpose" required>
+                            <option value="">Select one...</option>
                             <option value="Gaming">Gaming (AAA titles, esports)</option>
-                            <option value="Streaming & Content">Streaming & Content Creation</option>
-                            <option value="Office & Productivity">Office & Productivity</option>
-                            <option value="3D Rendering / CAD">3D Rendering / CAD</option>
-                            <option value="General / Student">General Use / Student</option>
+                            <option value="Streaming">Streaming & Content Creation</option>
+                            <option value="Office">Office & Productivity</option>
+                            <option value="3D Rendering">3D Rendering / CAD</option>
+                            <option value="General">General Use / Student</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>📝 Extra Details (Optional)</label>
-                        <textarea name="details" rows="4" placeholder="Examples: Need WiFi, prefer NVIDIA, want RGB lighting, playing specific games like Warzone, need 32GB RAM, etc."></textarea>
+                        <textarea name="details" rows="4" placeholder="Examples: Need WiFi, prefer NVIDIA, want RGB lighting, playing specific games like Warzone, etc."></textarea>
                     </div>
 
                     <button type="submit">✉️ Send Request → Get Parts List</button>
                 </form>
-
-                <div class="success-msg" id="successMsg">
-                    ✅ Thank you! We'll email your custom parts list within 24 hours.
-                </div>
             </div>
         </div>
     </div>
@@ -334,7 +281,6 @@
         <div class="business-email">
             📧 Business Contact: <a href="mailto:pcbuilder621@gmail.com">pcbuilder621@gmail.com</a>
         </div>
-        <p style="margin-top: 15px; font-size: 0.8rem;">⚡ Tell us your budget — we'll design the perfect machine ⚡</p>
     </div>
 </div>
 
@@ -343,19 +289,10 @@
     const slider = document.getElementById('budgetSlider');
     const value = document.getElementById('budgetValue');
     
-    slider.oninput = function() { value.value = this.value; }
-    value.oninput = function() { slider.value = this.value; }
-    
-    // Show success message on form submit (without page reload)
-    const form = document.querySelector('form');
-    const successMsg = document.getElementById('successMsg');
-    
-    form.addEventListener('submit', function(e) {
-        successMsg.style.display = 'block';
-        setTimeout(function() {
-            successMsg.style.display = 'none';
-        }, 5000);
-    });
+    if (slider && value) {
+        slider.oninput = function() { value.value = this.value; }
+        value.oninput = function() { slider.value = this.value; }
+    }
 </script>
 
 </body>
