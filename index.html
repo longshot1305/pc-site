@@ -1,16 +1,362 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Precision PC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision PC | Custom Computer Builds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .header h1 span {
+            color: #00d9ff;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Two column layout */
+        .row {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        /* Info cards */
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .info-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .info-card li:before {
+            content: "✓";
+            color: #00d9ff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .example-box h4 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .form-card h2 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .form-card .sub {
+            color: #666;
+            margin-bottom: 25px;
+            border-left: 3px solid #00d9ff;
+            padding-left: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #00d9ff;
+            box-shadow: 0 0 0 3px rgba(0,217,255,0.1);
+        }
+
+        .budget-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .budget-row input[type="range"] {
+            flex: 2;
+        }
+
+        .budget-row input[type="number"] {
+            flex: 1;
+        }
+
+        button {
+            background: #1a1a2e;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 40px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #00d9ff;
+            color: #1a1a2e;
+            transform: translateY(-2px);
+        }
+
+        .success-msg {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #1a1a2e;
+            color: #aaa;
+            border-radius: 30px 30px 0 0;
+            margin-top: 50px;
+        }
+
+        .business-email {
+            background: #2a2a4e;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .business-email a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .form-card {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello Netlify!</h1>
-    <p>If you can see this, it's working.</p>
+
+<div class="header">
+    <div class="container">
+        <h1>PRECISION <span>PC</span></h1>
+        <p>Your budget. Our expertise. The perfect computer.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Left column - Information -->
+        <div class="col">
+            <div class="info-card">
+                <h3>💻 How It Works</h3>
+                <ul>
+                    <li>Tell us your budget and needs</li>
+                    <li>We hand-pick the best components</li>
+                    <li>You get a custom parts list via email</li>
+                    <li>Build it yourself or ask for assembly help</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>🎮 Perfect For</h3>
+                <ul>
+                    <li>Gaming PCs (budget to high-end)</li>
+                    <li>Video editing & streaming</li>
+                    <li>Office & productivity builds</li>
+                    <li>3D rendering & CAD workstations</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>📌 Example Build</h4>
+                <p><strong>$850 Budget:</strong><br>
+                Ryzen 5 5600X + RTX 3060 + 16GB RAM + 1TB SSD<br>
+                Perfect for 1080p gaming and streaming</p>
+            </div>
+        </div>
+
+        <!-- Right column - Form -->
+        <div class="col">
+            <div class="form-card">
+                <h2>Request Your Build</h2>
+                <div class="sub">Fill out the form and we'll email you a custom parts list</div>
+
+                <!-- NETLIFY FORM - This is the key part -->
+                <form name="pc-build-request" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="pc-build-request">
+
+                    <div class="form-group">
+                        <label>📝 Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>📧 Email Address</label>
+                        <input type="email" name="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>💰 Your Budget (USD)</label>
+                        <div class="budget-row">
+                            <input type="range" id="budgetSlider" name="budget" min="300" max="8000" step="50" value="1500">
+                            <input type="number" id="budgetValue" value="1500" min="300" max="8000" step="50">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>🖥️ Primary Use</label>
+                        <select name="purpose" required>
+                            <option value="Gaming">Gaming (AAA titles, esports)</option>
+                            <option value="Streaming & Content">Streaming & Content Creation</option>
+                            <option value="Office & Productivity">Office & Productivity</option>
+                            <option value="3D Rendering / CAD">3D Rendering / CAD</option>
+                            <option value="General / Student">General Use / Student</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>📝 Extra Details (Optional)</label>
+                        <textarea name="details" rows="4" placeholder="Examples: Need WiFi, prefer NVIDIA, want RGB lighting, playing specific games like Warzone, need 32GB RAM, etc."></textarea>
+                    </div>
+
+                    <button type="submit">✉️ Send Request → Get Parts List</button>
+                </form>
+
+                <div class="success-msg" id="successMsg">
+                    ✅ Thank you! We'll email your custom parts list within 24 hours.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>© 2025 Precision PC - Custom Computer Builds</p>
+        <div class="business-email">
+            📧 Business Contact: <a href="mailto:YOURBUSINESS@EXAMPLE.COM">YOURBUSINESS@EXAMPLE.COM</a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.8rem;">⚡ Tell us your budget — we'll design the perfect machine ⚡</p>
+    </div>
+</div>
+
+<script>
+    // Budget slider sync
+    const slider = document.getElementById('budgetSlider');
+    const value = document.getElementById('budgetValue');
     
-    <form name="test" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="test">
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Send</button>
-    </form>
+    slider.oninput = function() { value.value = this.value; }
+    value.oninput = function() { slider.value = this.value; }
+    
+    // Show success message on form submit (without page reload)
+    const form = document.querySelector('form');
+    const successMsg = document.getElementById('successMsg');
+    
+    form.addEventListener('submit', function(e) {
+        successMsg.style.display = 'block';
+        setTimeout(function() {
+            successMsg.style.display = 'none';
+        }, 5000);
+    });
+</script>
+
 </body>
 </html>
